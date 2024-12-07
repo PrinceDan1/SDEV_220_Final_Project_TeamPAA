@@ -1,0 +1,90 @@
+{% extends "base.html"%}
+
+{% block content %}
+    <h4 class="text-center">Scheduling Employee Page. </h4>
+
+
+    <div >
+
+
+        <form class="row g-3" action="/schedulingemployee/" method="POST">
+            {% csrf_token %}
+            
+
+            <div class="mb-2">
+                <label for="exampleInputEmail1" class="form-label">Employee id</label>
+                <input type="text" class="form-control" placeholder="Enter the Employee id" name="your_id">
+            </div>
+    
+            <div class="col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Employee Name</label>
+                <input type="text" class="form-control" placeholder="Enter employee Name" name="your_name">
+            </div>
+            <div class="col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Employee Email</label>
+                <input type="text" class="form-control" placeholder="Enter the Employee Email" name="your_email">
+            </div>
+            <div class="col-md-6">
+                <label for="exampleInputEmail1" class="form-label"> Employee Address</label>
+                <input type="text" class="form-control" placeholder="Enter Employee Address" name="your_address">
+            </div>
+    
+            <div class="col-md-6">
+                <label for="exampleInputEmail1" class="form-label"> Employee Phone</label>
+                <input type="text" class="form-control" placeholder="Enter Employee Phone" name="your_phone">
+            </div>
+            
+    
+            <div class="col-md-6">
+            <div class="form-group mb-30">
+                <select name="your_schedule" class="form-control">
+                    <option value="Choose Your Schedule Time">Choose Employee Schedule Time</option>
+                    <option value="8 AM to 4 PM">"8 AM to 4 PM"></option>
+                    <option value="9 AM to 5 PM">"9 AM to 5 PM"></option>
+                    <option value="12 PM to 5 PM ">"12 PM to 5 PM"></option>
+                    <option value="12 PM to 4 PM">"12 PM to 4 PM"></option>
+                </select>
+            </div>
+            </div>
+    
+            <div class="col-md-6">
+            <div class="form-group mb-30">
+                <select name="date" class="form-control">
+                    <option value="Choose Your Schedule Date">Choose Your schedule Date</option>
+                    <option value="Monday">"Monday"></option>
+                    <option value="Tuesday">"Tuesday"></option>
+                    <option value="Wednesday">"Wednesday"></option>
+                    <option value="Thursday">"Thursday"></option>
+                    <option value="Friday">"Friday"></option>
+                    
+                </select>
+            
+            </div>
+            </div>
+    
+            <div class="col-12">
+                <div class="form-group mb-30">
+                    <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
+                </div>
+    
+    
+            </div>
+    
+            <div class="container text-center mt-3">
+                <button type="submit" class="btn btn-primary">Scheduling</button>
+            </div>
+
+
+        </form>
+
+
+
+
+
+    </div>
+
+
+
+
+
+{% endblock content %}

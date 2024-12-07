@@ -1,0 +1,68 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+
+
+<div class="container card">
+    <h5 class="text-decoration-underline">Employee Scheduled Lists.</h5>
+
+    <div>
+
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th scope="col">id from db</th>
+                    <th scope="col">Employeeid</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Employee Email</th>
+                    <th scope="col">Employee Address</th>
+                    <th scope="col">Employee Phone</th>
+                    <th scope="col">Schedule Time</th>
+                    <th scope="col">Schedule Date</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if employeescheduled %}
+                {% for eachemployee in employeescheduled %}
+
+
+                <tr>
+                    
+                    <td scope="row">{{ eachemployee.id }}</td>
+                    <td>{{ eachemployee.your_id }}</td>
+                    <td>{{ eachemployee.your_name }}</td>
+                    <td>{{ eachemployee.your_email }}</td>
+                    <td>{{ eachemployee.your_address }}</td>
+                    <td>{{ eachemployee.your_phone }}</td>
+                    <td>{{ eachemployee.your_schedule }}</td>
+                    <td>{{ eachemployee.date }}</td>
+                    <td>{{ eachemployee.message }}</td>
+                    
+                    
+                    <td><a href="{% url 'deleteschedule' eachemployee.id %}" class="btn btn-sm btn-outline-danger">delete</a></td>
+
+                
+                </tr>
+
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+
+
+    
+    </div>
+
+</div
+
+
+
+
+
+
+
+
+
+{% endblock content %}
